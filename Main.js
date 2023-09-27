@@ -15,6 +15,11 @@ export const CLICK2_AUDIO = new Audio('audio2.wav');
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         console.log("Ce jeu a été developpé par Antoine Bartoli, élève de Cy-Tech, pour un defi !");
+        // Bloque l'access si c'est un pc
+        if (window.innerWidth >= window.innerHeight) {
+            alert("Ce jeu est disponible uniquement sur mobile !!");
+            throw new Error('Platform Error...');
+        }
         // Service Worker pour transformer le site en PWA
         // https://www.freecodecamp.org/news/build-a-pwa-from-scratch-with-html-css-and-javascript/
         if ("serviceWorker" in navigator) {

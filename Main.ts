@@ -10,6 +10,13 @@ async function main()
 {
     console.log("Ce jeu a été developpé par Antoine Bartoli, élève de Cy-Tech, pour un defi !");
 
+    // Bloque l'access si c'est un pc
+    if(window.innerWidth >= window.innerHeight)
+    {
+        alert("Ce jeu est disponible uniquement sur mobile !!");
+        throw new Error('Platform Error...');
+    }
+
     // Service Worker pour transformer le site en PWA
     // https://www.freecodecamp.org/news/build-a-pwa-from-scratch-with-html-css-and-javascript/
     if ("serviceWorker" in navigator) {
